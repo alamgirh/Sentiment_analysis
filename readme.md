@@ -16,7 +16,7 @@ Regression:
 
 $$z = \theta_0 x_0 + \theta_1 x_1 + \theta_2 x_2 + ... \theta_N x_N$$
 
-Note that the $\theta$ values are "weights". If you took the deep learning specialization, we referred to the weights with the 'w' vector.  In this course, we're using a different variable $\theta$ to refer to the weights.
+$\theta$ values are "weights".
 
 Logistic regression
 
@@ -24,7 +24,6 @@ $$ h(z) = \frac{1}{1+\exp^{-z}}$$
 
 $$z = \theta_0 x_0 + \theta_1 x_1 + \theta_2 x_2 + ... \theta_N x_N$$
 
-We will refer to 'z' as the 'logits'.
 
 
 ## Cost function and Gradient
