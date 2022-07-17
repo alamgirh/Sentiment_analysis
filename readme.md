@@ -30,7 +30,7 @@ $$z = \theta_0 x_0 + \theta_1 x_1 + \theta_2 x_2 + ... \theta_N x_N$$
 
 The cost function used for logistic regression is the average of the log loss across all training examples:
 
-$$J(\theta) = -\frac{1}{m} \sum_{i=1}^m y^{(i)}\log (h(z(\theta)^{(i)})) + (1-y^{(i)})\log (1-h(z(\theta)^{(i)}))\tag{5} $$
+$$J(\theta) = -\frac{1}{m} \sum_{i=1}^m y^{(i)}\log (h(z(\theta)^{(i)})) + (1-y^{(i)})\log (1-h(z(\theta)^{(i)})) $$
 
 * $m$ is the number of training examples
 * $y^{(i)}$ is the actual label of training example 'i'.
@@ -45,10 +45,10 @@ $$ Loss = -1 \times \left( y^{(i)}\log (h(z(\theta)^{(i)})) + (1-y^{(i)})\log (1
 
 ## Update the weights
 
-To update your weight vector $\theta$, you will apply gradient descent to iteratively improve your model's predictions.  
+To update weight vector $\theta$, we will apply gradient descent to iteratively improve our model's predictions.  
 The gradient of the cost function $J$ with respect to one of the weights $\theta_j$ is:
 
-$$\nabla_{\theta_j}J(\theta) = \frac{1}{m} \sum_{i=1}^m(h^{(i)}-y^{(i)})x^{(i)}_j \tag{5}$$
+$$\nabla_{\theta_j}J(\theta) = \frac{1}{m} \sum_{i=1}^m(h^{(i)}-y^{(i)})x^{(i)}_j $$
 
 * 'i' is the index across all 'm' training examples.
 * 'j' is the index of the weight $\theta_j$, so $x^{(i)}_j$ is the feature associated with weight $\theta_j$
