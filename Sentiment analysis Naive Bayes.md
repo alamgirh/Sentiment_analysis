@@ -1,4 +1,4 @@
-# Assignment 2: Naive Bayes
+# Sentiment analysis Naive Bayes
 Welcome to week two of this specialization. You will learn about Naive Bayes. Concretely, you will be using Naive Bayes for sentiment analysis on tweets. Given a tweet, you will decide if it has a positive sentiment or a negative one. Specifically you will: 
 
 * Train a naive bayes model on a sentiment analysis task
