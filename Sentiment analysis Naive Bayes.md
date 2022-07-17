@@ -17,33 +17,14 @@ For any machine learning project, once we've gathered the data, the first step i
 - Finally we want to use stemming to only keep track of one variation of each word. In other words, we'll treat "motivation", "motivated", and "motivate" similarly by grouping them within the same stem of "motiv-".
 
 
-## Part 1.1 Implementing your helper functions
 
-To help you train your naive bayes model, you will need to compute a dictionary where the keys are a tuple (word, label) and the values are the corresponding frequency.  Note that the labels we'll use here are 1 for positive and 0 for negative.
-
-You will also implement a lookup helper function that takes in the `freqs` dictionary, a word, and a label (1 or 0) and returns the number of times that word and label tuple appears in the collection of tweets.
-
-For example: given a list of tweets `["i am rather excited", "you are rather happy"]` and the label 1, the function will return a dictionary that contains the following key-value pairs:
-
-{
-    ("rather", 1): 2,
-    ("happi", 1) : 1, 
-    ("excit", 1) : 1
-}
-
-- Notice how for each word in the given string, the same label 1 is assigned to each word.
-- Notice how the words "i" and "am" are not saved, since it was removed by process_tweet because it is a stopword.
-- Notice how the word "rather" appears twice in the list of tweets, and so its count value is 2.
-
-
-
-# Part 2: Train your model using Naive Bayes
+## Part 2: Train our model using Naive Bayes
 
 Naive bayes is an algorithm that could be used for sentiment analysis. It takes a short time to train and also has a short prediction time.
 
-#### So how do you train a Naive Bayes classifier?
-- The first part of training a naive bayes classifier is to identify the number of classes that you have.
-- You will create a probability for each class.
+#### So how do we train a Naive Bayes classifier?
+- The first part of training a naive bayes classifier is to identify the number of classes that we have.
+- We will create a probability for each class.
 $P(D_{pos})$ is the probability that the document is positive.
 $P(D_{neg})$ is the probability that the document is negative.
 Use the formulas as follows and store the values in a dictionary:
@@ -96,7 +77,7 @@ $$\text{loglikelihood} = \log \left(\frac{P(W_{pos})}{P(W_{neg})} \right)\tag{6}
 - the logprior is $log(D_{pos}) - log(D_{neg})$
 
 ##### Calculate log likelihood
-- Finally, you can iterate over each word in the vocabulary, use your `lookup` function to get the positive frequencies, $freq_{pos}$, and the negative frequencies, $freq_{neg}$, for that specific word.
+- Finally, we can iterate over each word in the vocabulary, use your `lookup` function to get the positive frequencies, $freq_{pos}$, and the negative frequencies, $freq_{neg}$, for that specific word.
 - Compute the positive probability of each word $P(W_{pos})$, negative probability of each word $P(W_{neg})$ using equations 4 & 5.
 
 $$ P(W_{pos}) = \frac{freq_{pos} + 1}{N_{pos} + V}\tag{4} $$
@@ -104,11 +85,11 @@ $$ P(W_{neg}) = \frac{freq_{neg} + 1}{N_{neg} + V}\tag{5} $$
 
 **Note:** We'll use a dictionary to store the log likelihoods for each word.  The key is the word, the value is the log likelihood of that word).
 
-- You can then compute the loglikelihood: $log \left( \frac{P(W_{pos})}{P(W_{neg})} \right)$.
+- We can then compute the loglikelihood: $log \left( \frac{P(W_{pos})}{P(W_{neg})} \right)$.
 
 
 
-# Part 3: Test your naive bayes
+# Part 3: Test our naive bayes
 
 Now that we have the `logprior` and `loglikelihood`, we can test the naive bayes function by making predicting on some tweets!
 
