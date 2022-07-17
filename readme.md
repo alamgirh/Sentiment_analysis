@@ -43,3 +43,19 @@ $$ Loss = -1 \times \left( y^{(i)}\log (h(z(\theta)^{(i)})) + (1-y^{(i)})\log (1
 
 * All the $h$ values are between 0 and 1, so the logs will be negative. That is the reason for the factor of -1 applied to the sum of the two loss terms.
 
+
+## Update the weights
+
+To update your weight vector $\theta$, you will apply gradient descent to iteratively improve your model's predictions.  
+The gradient of the cost function $J$ with respect to one of the weights $\theta_j$ is:
+
+$$\nabla_{\theta_j}J(\theta) = \frac{1}{m} \sum_{i=1}^m(h^{(i)}-y^{(i)})x^{(i)}_j \tag{5}$$
+
+* 'i' is the index across all 'm' training examples.
+* 'j' is the index of the weight $\theta_j$, so $x^{(i)}_j$ is the feature associated with weight $\theta_j$
+
+* To update the weight $\theta_j$, we adjust it by subtracting a fraction of the gradient determined by $\alpha$:
+
+$$\theta_j = \theta_j - \alpha \times \nabla_{\theta_j}J(\theta) $$
+
+* The learning rate $\alpha$ is a value that we choose to control how big a single update will be.
