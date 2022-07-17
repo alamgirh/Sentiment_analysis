@@ -1,26 +1,21 @@
-# Sentiment analysis Naive Bayes
-Welcome to week two of this specialization. You will learn about Naive Bayes. Concretely, you will be using Naive Bayes for sentiment analysis on tweets. Given a tweet, you will decide if it has a positive sentiment or a negative one. Specifically you will: 
+# Sentiment analysis with Naive Bayes
+We will use Naive Bayes for sentiment analysis on tweets. Given a tweet, we will decide if it has a positive sentiment or a negative one. Specifically we will: 
 
 * Train a naive bayes model on a sentiment analysis task
-* Test using your model
+* Test our model
 * Compute ratios of positive words to negative words
 * Do some error analysis
-* Predict on your own tweet
-
-You may already be familiar with Naive Bayes and its justification in terms of conditional probabilities and independence.
-* In this week's lectures and assignments we used the ratio of probabilities between positive and negative sentiment.
-* This approach gives us simpler formulas for these 2-way classification tasks.
+* Predict on our own tweet
 
 
-# Part 1: Process the Data
+## Part 1: Process the Data
 
-For any machine learning project, once you've gathered the data, the first step is to process it to make useful inputs to your model.
-- **Remove noise**: You will first want to remove noise from your data -- that is, remove words that don't tell you much about the content. These include all common words like 'I, you, are, is, etc...' that would not give us enough information on the sentiment.
-- We'll also remove stock market tickers, retweet symbols, hyperlinks, and hashtags because they can not tell you a lot of information on the sentiment.
-- You also want to remove all the punctuation from a tweet. The reason for doing this is because we want to treat words with or without the punctuation as the same word, instead of treating "happy", "happy?", "happy!", "happy," and "happy." as different words.
-- Finally you want to use stemming to only keep track of one variation of each word. In other words, we'll treat "motivation", "motivated", and "motivate" similarly by grouping them within the same stem of "motiv-".
+For any machine learning project, once we've gathered the data, the first step is to process it to make useful inputs to our model.
+- **Remove noise**: we will first want to remove noise from our data -- that is, remove words that don't tell us much about the content. These include all common words like 'I, you, are, is, etc...' that would not give us enough information on the sentiment.
+- We'll also remove stock market tickers, retweet symbols, hyperlinks, and hashtags because they can not tell us a lot of information on the sentiment.
+- We also want to remove all the punctuation from a tweet. The reason for doing this is because we want to treat words with or without the punctuation as the same word, instead of treating "happy", "happy?", "happy!", "happy," and "happy." as different words.
+- Finally we want to use stemming to only keep track of one variation of each word. In other words, we'll treat "motivation", "motivated", and "motivate" similarly by grouping them within the same stem of "motiv-".
 
-We have given you the function `process_tweet` that does this for you.
 
 ## Part 1.1 Implementing your helper functions
 
