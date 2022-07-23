@@ -8,7 +8,7 @@ We will use Naive Bayes for sentiment analysis on tweets. Given a tweet, we will
 * Predict on our own tweet
 
 
-## Part 1: Process the Data
+## Step 1: Process the Data
 
 For any machine learning project, once we've gathered the data, the first step is to process it to make useful inputs to our model.
 - **Remove noise**: we will first want to remove noise from our data -- that is, remove words that don't tell us much about the content. These include all common words like 'I, you, are, is, etc...' that would not give us enough information on the sentiment.
@@ -18,7 +18,7 @@ For any machine learning project, once we've gathered the data, the first step i
 
 
 
-## Part 2: Train our model using Naive Bayes
+## Step 2: Train our model using Naive Bayes
 
 Naive bayes is an algorithm that could be used for sentiment analysis. It takes a short time to train and also has a short prediction time.
 
@@ -89,7 +89,7 @@ $$ P(W_{neg}) = \frac{freq_{neg} + 1}{N_{neg} + V}\tag{5} $$
 
 
 
-# Part 3: Test our naive bayes
+# Step 3: Test our naive bayes
 
 Now that we have the `logprior` and `loglikelihood`, we can test the naive bayes function by making predicting on some tweets!
 
@@ -105,7 +105,7 @@ $$ p = logprior + \sum_i^N (loglikelihood_i)$$
 
 
 
-# Part 4: Filter words by Ratio of positive to negative counts
+# Step 4: Filter words by Ratio of positive to negative counts
 
 - Some words have more positive counts than others, and can be considered "more positive".  Likewise, some words can be considered more negative than others.
 - One way for us to define the level of positiveness or negativeness, without calculating the log likelihood, is to compare the positive to negative frequency of the word.
