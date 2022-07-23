@@ -1,6 +1,7 @@
 # Sentiment analysis with Naive Bayes
 We will use Naive Bayes for sentiment analysis on tweets. Given a tweet, we will decide if it has a positive sentiment or a negative one. Specifically we will: 
 
+* Process the data
 * Train a naive bayes model on a sentiment analysis task
 * Test our model
 * Compute ratios of positive words to negative words
